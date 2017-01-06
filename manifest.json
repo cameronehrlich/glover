@@ -1,0 +1,20 @@
+{
+  "name": "Glover",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Donald J. Glover's cure for the internet.",
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["myscript.js"],
+      "run_at" : "document_end"
+    }
+  ],
+  "content_security_policy": "default-src 'none'; script-src 'self'"
+}
